@@ -1,0 +1,64 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+<h3>liu yan-tips</h3>
+
+
+<div class="comments">
+{% for comment in comments %}
+	<li class="comment">
+
+		<div class="comment-title">
+			{% if comment.blog_web %}
+				<span> <a href="http://{{ comment.blog_web }}" target="_blank" > {{ comment.username }} </a> 说:</span>
+			{% else %}
+				<span > {{ comment.username }} 说:</span>
+			{% endif %}
+		<div >
+	
+		<div class="comment-body" id="body-{{comment.id}}">
+			{% if comment.body_html %}
+			    {{ comment.body_html | safe }}
+			{% else %}
+				{{ comment.body }}
+			{% endif %}
+		</div>
+
+		<div class="comment-footer">
+			<span class="comment-footer-list"> {{ moment(comment.timestamp).format('YYYY年MM月DD日 HH:mm') }}</span>
+			<span class="comment-footer-list"> <a href="#report-comment" title="quote this comment" 
+										onclick="return CommentQuote('{{ comment.username }}','body-{{ comment.id }}');" >quote</a></span>
+		</div>
+
+
+	</li>
+
+{% endfor %}
+
+<div id="report-comment">
+	<h2>report comment</h2>
+</div>
+
+<form   method="POST" name="comments_form">
+    {{ form.hidden_tag() }}
+
+
+    {{ form.body.label }}</br>
+    {{ form.body.id }}</br>
+    {{ form.body(cols=90, rows=6, style="border-radius:5px;") }}
+
+    {{ form.username.label }}</br>
+    {{ form.username(style="width:250px; height:30px;border-radius:5px;") }} -- other-tips</br>
+
+
+		{{ form.email.label }}</br>
+		{{ form.email(style="width:250px; height:30px;border-radius:5px;") }}</br>
+
+		{{ form.blog_web.label }}</br>
+		{{ form.blog_web(style="width:250px; height:30px;border-radius:5px;") }}</br>
+	<div class="report-comment-form">
+    {{ form.submit(style="width:100px; height:30px;border-radius:5px;") }}
+	</div>
+</form>
+
+
+</div>

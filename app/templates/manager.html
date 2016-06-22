@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+		<div class="container">
+		    {% for message in get_flashed_messages() %}
+		    <ul class="alert alert-warning">
+		        <button type="button" class="close" data-dismiss="alert">&times;</button>
+		        {{ message }}
+		    {% endfor %}
+			</ul>
+		</div>
+
+	<div class="manager-body">
+		<div class="manager-left">
+
+			<div class="manager-left-li">
+				<a  href="{{ url_for('main.category') }}">Categorys Manager</a>
+			</div>
+
+			<div class="manager-left-li">
+				 <a  href="{{ url_for('.lable') }}">Lables Manager</a>
+			</div>
+
+		</div>
+
+		<div class="manager-right">
+
+			{% if manager_swith == 'category' %}
+				<div class="manager-right-title">
+					 This is {{ manager_swith }} control panel
+				</div>
+
+				<div class="manager-category-box">
+					{% for category in categorys %}
+
+					 <div class="category-box-list"> 
+							 {{ category.name }}
+				   	</div>
+
+					{% endfor %}
+				</div>
+
+					  <form action="{{ url_for('main.category') }}"  method="POST" >
+					   {{ form.hidden_tag() }}
+
+					   {{ form.name.label }}</br>
+					   {{ form.name(style="width:250px; height:30px;border-radius:5px;") }}</br>
+					   <input type="submit" name="action" value="add" style="width:50px; height:30px;border-radius:5px;">
+					   <input type="submit" name="action" value="del" style="width:50px; height:30px;border-radius:5px;">
+
+					    </form>
+
+
+			
+			{% elif  manager_swith == 'lable' %}
+					<div class="manager-right-title">
+				 		This is {{ manager_swith }} control panel
+					</div>
+
+				<div class="manager-category-box">
+					{% for lable in lables %}
+
+						 <div class="category-box-list"> 
+							 {{ lable.name }}
+						</div>
+					{% endfor %}
+				</div>
+			
+					  <form action="{{ url_for('main.lable') }}"  method="POST" >
+					   {{ form.hidden_tag() }}
+
+					   {{ form.name.label }}</br>
+					   {{ form.name(style="width:250px; height:30px;border-radius:5px;") }}</br>
+					   <input type="submit" name="action" value="add" style="width:50px; height:30px;border-radius:5px;">
+					   <input type="submit" name="action" value="del" style="width:50px; height:30px;border-radius:5px;">
+
+					    </form>
+
+
+
+			{% else %}
+				<h3>  please select function on right </h3>
+
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+<ul class="posts">
+{% for post in posts %}
+	<li class="post">
+
+	<div class="post-title">
+	<a href="{{ url_for('.post', id=post.id) }}"> {{ post.title }} </a>
+	<div > 
+
+
+	{% if current_user == post.author  and current_user.is_administrator()  and edit_switch == True %}
+            <a href="{{ url_for('.edit_post', id=post.id) }}"><span class="label label-primary">Edit This Post</span></a>
+   	{% endif %}
+	</div>
+
+	</div>
+
+	{% if post.lable.name %}
+		<div class="post-lable"> 
+			<span class="glyphicon glyphicon-tag"></span> {{ post.lable.name }}
+		</div>
+	{% endif %}
+
+	<div class="post-body">
+		{% if index == True %}
+			{{ post.body_head }}
+			{% if post.body_head[480:500] %}
+				<span> <a href="{{ url_for('.post', id=post.id) }}" title="查看全部" > <b>.....</b></a> </span>
+			{% endif %}
+		{% else %}
+			{% if post.body_html %}
+				{{ post.body_html | safe }}
+			{% else %}
+				{{ post.body }}
+			{% endif %}
+		{% endif %}
+
+	</div>
+
+
+	<div class="post-footer">
+
+	<span class="post-footer-list">
+		<span class="glyphicon glyphicon-user"></span> {{ post.author.username }} 
+	</span>
+
+	<span class="post-footer-list">
+		<span class="glyphicon glyphicon-time"></span> {{ moment(post.timestamp).format('YYYY-MM-DD') }}发表 
+	</span>
+
+	<span class="post-footer-list">
+		<span class="glyphicon glyphicon-edit"></span> {{ moment(post.last_stamp).format('YYYY-MM-DD') }}更新
+	</span>
+
+	<span class="post-footer-list">
+		<span class="glyphicon glyphicon-eye-open"></span> {{ post.browsed }} 浏览
+	</span>
+
+	{% if not  edit_switch == True %}
+	<span class="post-footer-list">
+	<a   href="{{ url_for('.post', id=post.id) }}#comments-mark"> 
+		<span class="glyphicon glyphicon-comment"></span> {{ post.comments.count() }}</a>
+	
+	</span>
+	{% endif %}
+
+	</div>
+
+</li>
+{% endfor %}
+
+</ul>

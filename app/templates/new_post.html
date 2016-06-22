@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}New Post{% endblock %}
+
+{% block content %}
+<div class="new-post">
+	<form method="post">
+		{{ form.hidden_tag() }}
+
+		{{ form.title.label }}</br>
+		{{ form.title(style="width:250px; height:30px;border-radius:5px;") }}</br>
+
+		{{ form.category.label }}</br>
+		{{ form.category(style="width:250px; height:30px;border-radius:5px;") }}</br>
+
+		{{ form.lable.label }}</br>
+		{{ form.lable(style="width:250px; height:30px;border-radius:5px;") }}</br>
+
+		{{ form.body.label }}</br>
+		{{ form.body(cols=90, rows=10, style="border-radius:5px;") }}
+
+		{{ form.submit(style="width:100px; height:30px;border-radius:5px;") }}
+
+	</form>
+
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+{{ super() }}
+{{ pagedown.include_pagedown() }}
+{% endblock %}
+

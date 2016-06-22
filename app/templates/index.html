@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+
+{% block title %}Flasky{% endblock %}
+
+
+{% block left_content %}
+
+{% if lable %}
+	{{ lable.name }}
+{% endif %}
+
+{% include '_posts.html' %}
+
+	{% if pagination.has_next %} 
+		<div class="pagination">
+
+		{% if mark=='lables' %}
+		{{ macros.pagination_widget(pagination, '.lables', lable_id=lable.id) }}
+		{% endif %}
+
+		{% if  mark=='index' %}
+		{{ macros.pagination_widget(pagination, '.index') }}
+		{% endif %}
+
+		{% if mark=='all' %}
+		{{ macros.pagination_widget(pagination, '.all') }}
+		{% endif %}
+
+		{% if mark=='mind_study' %}
+		{{ macros.pagination_widget(pagination, '.mind_study') }}
+		{% endif %}
+
+		{% if mark == 'others' %}
+		{{ macros.pagination_widget(pagination, '.others') }}
+		{% endif %}
+
+		{% if mark == 'bug' %}
+		{{ macros.pagination_widget(pagination, '.bug') }}
+		{% endif %}
+
+	</div>
+	{% endif %}
+
+
+
+
+
+{% endblock %}
+
+{% block right_content %}
+	{% include '_category.html' %}
+{% endblock %}
+
+
