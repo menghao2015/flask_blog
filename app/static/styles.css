@@ -1,0 +1,376 @@
+/* navbar */
+.navbar-custom {
+	background-color:black;
+	margin: 0px;
+/*	opacity:0.65;
+	border: 1px solid red;
+	box-shadow:0px 5px #a2dddd; */
+}
+
+.navbar li { margin-left:20px;}
+.navbar a {color:white;}
+.navbar a:hover{ border-bottom:2px solid #69c; color:#red; text-decoration:none;}
+.nav li a:hover{background-color:#dddddd;}
+
+.navbar-mark {
+	border-bottom: 2px solid white;
+	padding-bottom: 5px;
+}
+
+.bg_color {
+	color: #444;
+	background-color:#484848;
+ }
+
+.header {
+	width:100%;
+	height:100px;
+	margin:-20px 0px 0px 0px;
+	color:white;
+	background-color:#262626;
+}
+
+.header-line {
+	padding: 30px 0px 0px 150px;
+	}
+
+
+
+.container {
+	width:1000px;
+}
+
+
+
+/* ----------    manager CSS --------------*/
+.header-manager {
+	width:80px;
+	height:30px;
+	margin:0px 100px 0px 0px;
+	float:right;
+	text-align: center;
+}
+
+
+.manager-body {
+	list-style-type: none;
+	width:1000px;
+	overflow:hidden;
+	min-height:520px;
+	margin: 0px auto;
+	background:#99bbbb;
+}
+
+.manager-left {
+	width:250px;
+	height:200px;
+	border: 1px solid green;
+	float:left;
+	text-align: center;
+}
+
+.manager-left-li {
+	width:230px;
+	font-size:8px;
+	margin: 10px 0px 10px 0px;
+	}
+
+
+.manager-right {
+	width:700px;
+	height:auto;
+	padding:20px;	
+	float:right;
+	border:1px solid red;
+	}
+
+.manager-right-title {
+	width:100%;
+	height:auto;
+	margin:20px 0px 20px 0px;
+	text-align: center;
+	}
+
+.manager-right-list {
+	width: auto;
+	height:auto;
+	border:1px solid red;
+	}
+
+.manager-category-box {
+	width:500px;
+	margin: 5px 5px 30px 5px;
+	height:auto;
+	padding:5px;
+	border:1px solid green;
+	}
+
+.category-box-list {
+	width:40%;
+	height:auto;
+	margin:10px;
+	padding 10px;
+	border:1px solid red;
+	text-align:center;
+	}
+
+
+/* ----------- New post and Edit Post ------------- */
+
+.new-post {
+	width:auto;
+	min-height:500px;
+	margin:20px;
+	padding:5px;
+	border:1px solid red;
+}
+
+
+
+
+
+a,a:link { color: #666; text-decoration: none; }
+a:visited {}
+a:active, a:hover { color:#ff6600; text-decoration:underline;}
+a:focus { outline: none; }
+
+
+
+.footer {
+	width:100%;
+	height:100px;
+	text-align:center;
+	border-top: 1px solid #e0e0e0;
+}	
+
+.footer-github {
+	width:100%;
+	height:auto;
+	margin:25px 0px 0px 0px;
+}
+
+.footer-powered {
+	width:100%;
+	height:auto;
+	}
+
+
+
+.login-box {
+	list-style-type: none;
+	width:1000px;
+	height: 520px;
+	padding: 100px 300px;
+	margin: 0px auto;
+	border: 1px solid green;
+}
+
+.login {
+	width: auto;
+    height: auto;
+	margin: 0px auto;
+	text-align: center;
+    -webkit-border-radius: 5px;
+    background-color: #99bbbb;
+}
+/* ---------  Post CSS ---------- */
+
+#main-body {
+	list-style-type: none;
+	width:1000px;
+	overflow:hidden;
+	height:auto;
+	margin: 0px auto;
+	padding: 5px;
+	background:#484848 ;
+}
+
+.main-left {
+	width:720px;
+	float:left;
+	height:auto;
+	background:#484848 ;
+}
+
+.main-right {
+	width: 250px;
+	height:auto;
+	float:right;
+	background:#727272;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	color:white;
+}
+
+
+.posts {
+    list-style-type: none;
+	width:720px;
+    padding: 5px;
+    margin: 20px 0px 20px 0px;
+}
+
+
+.post-body {
+	padding:  10px;
+	border: 2px;
+	line-height:16pt;
+}
+
+.posts li.post {
+	margin: 20px 0px; 
+ 	padding: 1px; 
+	border-style: none;
+	background-color: #797979 ;
+	-moz-border-radius:10px;  
+    -webkit-border-radius:10px;  
+    border-radius:10px;  
+	color:white;
+}
+
+.post-title {
+    font-weight: bold;
+	margin: 8px;
+}
+
+.post-title a{color: orange;}
+.post-footer a{color: white;}
+.post-body a{color: white;}
+
+
+
+.post-lable {
+	width:50%;
+	height: auto;
+    font-weight: bold;
+	margin: 8px;
+	opacity:0.65;
+	color:white;
+}
+
+.post-footer {
+	margin: 0px 20px 0px 0px;
+	text-align: right;
+	font-size:10px;
+	opacity:0.65;
+}
+
+
+
+.post-footer-list {
+	margin: 0px 5px 0px 0px ;
+	text-align: right;
+	}
+
+
+.pagination {
+    width: 100%;
+	margin:0px 10px 0px 250px;
+}
+
+/* ---- comments CSS -------*/
+.comments{
+    list-style-type: none;
+    padding: 5px;
+    margin: 20px 0px ;
+    border-top: 1px solid #e0e0e0;
+}
+
+
+.comments li.comment {
+	padding: 5px;
+	background-color: white;
+	border-bottom: 1px dashed #e0e0e0;
+}
+
+.comment-title {
+    font-weight: bold;
+	margin: 8px;
+}
+
+
+.comment-body {
+	padding:  20px;
+	border: 2px;
+	word-wrap: break-word;
+	word-break: normal;
+}
+
+.comment-footer {
+	margin: 0px 50px 0px 0px;
+	text-align: right;
+	font-size:10px;
+	}
+
+.comment-footer-list {
+	margin: 0px 5px 0px 0px ;
+	text-align: right;
+	font-size: 8px;
+	}
+
+blockquote {
+	background-color:white;
+	border: 0px;
+    -webkit-border-radius:10px;  
+    border-radius:10px;  
+	}
+
+pre {
+	border:1px solid red;
+	}
+
+.report-comment-form{
+	margin: 5px 5px 0px 0px; 
+	padding: 3px 3px 0px 0px; 
+	border-style: none;
+	background-color:white;
+}
+
+.report-comment {
+	padding: 5px;
+	background-color:red;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.right-tips {
+	width:90%;
+	height:200px;
+	border-top: 2px solid #4f4f4f;
+	margin: 0px auto;
+	opacity:0.65;
+}
+
+.right-category {
+	width:90%;
+	height:auto;
+	margin: 0px 20px 20px 15px;
+	border-top: 2px solid #4f4f4f;
+	opacity:0.65;
+}
+
+.category-list {
+	width:100%;
+	height:35px;
+	margin: 8px 0px 2px 0px;
+	padding: 8px 0px 0px 4px;
+	border: 1px solid #4f4f4f;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	overflow:hidden;
+	color:white;
+	}
+
+.category-count {
+	display:inline;
+	width:40px;
+	height:100%;
+	margin: -4px 0px 0px 0px;
+	text-align: center;
+	border-left: 2px solid #4f4f4f;
+	float:right;
+	opacity:0.65;
+	color:white;
+
+}
+
