@@ -20,3 +20,4 @@ flask-login
 flask-pagedown
 markdown
 bleach
+uwsgi

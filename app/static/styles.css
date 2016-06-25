@@ -41,6 +41,21 @@
 }
 
 
+.font-manager-1 {
+	color:white;
+	opacity:0.75;
+	font-weight:900;
+	font-size:20px;
+	margin-bottom:-15px;
+}
+
+.font-manager-2 {
+	color:white;
+	opacity:0.75;
+	margin-top:10px;
+}
+
+
 
 /* ----------    manager CSS --------------*/
 .header-manager {
@@ -128,12 +143,18 @@
 
 
 
-
+/* ------------- <a> link manager -------------*/
 a,a:link { color: #666; text-decoration: none; }
 a:visited {}
 a:active, a:hover { color:#ff6600; text-decoration:underline;}
 a:focus { outline: none; }
 
+.post-title a{color: orange;}
+.post-footer a{color: white;}
+.post-body a{color: white;}
+.comments a {color:white}
+.comment-title a{text-decoration:underline;}
+.comment-footer a{text-decoration:none;}
 
 
 .footer {
@@ -162,7 +183,7 @@ a:focus { outline: none; }
 	height: 520px;
 	padding: 100px 300px;
 	margin: 0px auto;
-	border: 1px solid green;
+	background:#727272;
 }
 
 .login {
@@ -234,10 +255,6 @@ a:focus { outline: none; }
 	margin: 8px;
 }
 
-.post-title a{color: orange;}
-.post-footer a{color: white;}
-.post-body a{color: white;}
-
 
 
 .post-lable {
@@ -275,12 +292,15 @@ a:focus { outline: none; }
     padding: 5px;
     margin: 20px 0px ;
     border-top: 1px solid #e0e0e0;
+	color:white;
+	opacity:0.75;
+	font-weight:400;
 }
 
 
 .comments li.comment {
 	padding: 5px;
-	background-color: white;
+	background-color: #484848;
 	border-bottom: 1px dashed #e0e0e0;
 }
 
@@ -293,6 +313,8 @@ a:focus { outline: none; }
 .comment-body {
 	padding:  20px;
 	border: 2px;
+	font-weight:400;
+	font-size:17.5px;
 	word-wrap: break-word;
 	word-break: normal;
 }
@@ -310,21 +332,28 @@ a:focus { outline: none; }
 	}
 
 blockquote {
-	background-color:white;
+	background-color:#727272;
 	border: 0px;
-    -webkit-border-radius:10px;  
-    border-radius:10px;  
+	font-weight:400;
+    -webkit-border-radius:5px;  
+    border-radius:5px;  
+	padding-left:30px;
 	}
 
 pre {
-	border:1px solid red;
+	border:0px;
+	background-color:#727272;
+	font-weight:700;
+	font-size:15px;
+	color:white;
+	margin-left:-25px;
 	}
 
 .report-comment-form{
 	margin: 5px 5px 0px 0px; 
 	padding: 3px 3px 0px 0px; 
 	border-style: none;
-	background-color:white;
+	background-color:#484848;
 }
 
 .report-comment {

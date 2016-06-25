@@ -5,7 +5,7 @@ from app.models import User, Role, Category, Comment, Post
 from flask.ext.script import Manager, Shell
 from flask.ext.migrate import Migrate, MigrateCommand
 
-app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+app = create_app(os.getenv('FLASK_CONFIG') or 'unix')
 manager = Manager(app)
 migrate = Migrate(app, db)
 

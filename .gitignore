@@ -3,6 +3,8 @@
 *.so
 *.egg
 *.egg-info
+supervisor.conf
+bolg_web.*
 
 migrations/
 tests/
