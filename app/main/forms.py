@@ -27,12 +27,12 @@ class PostForm(Form):
 
 
 class CommentForm(Form):
-	body = TextAreaField('tips-body', validators=[Required(), Length(1, 512)])
-	username = StringField('tips-name', validators=[Required(), Length(1,64) ])
-	email = StringField('tips-Email ', validators=[Required(), Length(1,64), Email()])
-	blog_web = StringField('tips-web', validators=[ Length(0, 64)])
+	body = TextAreaField('comment-body', validators=[Required(), Length(1, 512)])
+	username = StringField('username', validators=[Required(), Length(1,64) ])
+	email = StringField('email ', validators=[Required(), Length(1,64), Email()])
+	blog_web = StringField('personal web', validators=[ Length(0, 64)])
 	remember_me = BooleanField('Keep me logged in')
-	submit = SubmitField('submit')
+	submit = SubmitField('Biu')
 
 class CategoryForm(Form):
 	name = StringField('Add/Del Category Name', validators=[Required(), Length(1,64) ])

@@ -1,6 +1,8 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
-<h3>liu yan-tips</h3>
+<div class="font-manager-1">
+	留言 (<span style="font-weight:500;"> {{ post.comments.count() }}</span> )
+</div>
 
 
 <div class="comments">
@@ -25,8 +27,8 @@
 
 		<div class="comment-footer">
 			<span class="comment-footer-list"> {{ moment(comment.timestamp).format('YYYY年MM月DD日 HH:mm') }}</span>
-			<span class="comment-footer-list"> <a href="#report-comment" title="quote this comment" 
-										onclick="return CommentQuote('{{ comment.username }}','body-{{ comment.id }}');" >quote</a></span>
+			<span class="comment-footer-list"> <a href="#report-comment" title="引用这条评论" 
+										onclick="return CommentQuote('{{ comment.username }}','body-{{ comment.id }}');" >引用</a></span>
 		</div>
 
 
@@ -35,28 +37,36 @@
 {% endfor %}
 
 <div id="report-comment">
-	<h2>report comment</h2>
+	<h3>留言 | 评论(HTML标签部分可用)</h3>
 </div>
 
 <form   method="POST" name="comments_form">
     {{ form.hidden_tag() }}
 
 
-    {{ form.body.label }}</br>
-    {{ form.body.id }}</br>
-    {{ form.body(cols=90, rows=6, style="border-radius:5px;") }}
+	<div class="font-manager-2">
+		你的留言
+	</div>
+    {{ form.body(cols=90, rows=6, style="border-radius:5px; background-color:#797979;") }}
 
-    {{ form.username.label }}</br>
-    {{ form.username(style="width:250px; height:30px;border-radius:5px;") }} -- other-tips</br>
+	<div class="font-manager-2">
+		你的称呼(必填)
+	</div>
+    {{ form.username(style="width:300px; height:35px;border-radius:5px;background-color:#797979;border:0px;") }}</br>
 
 
-		{{ form.email.label }}</br>
-		{{ form.email(style="width:250px; height:30px;border-radius:5px;") }}</br>
+		<div class="font-manager-2">
+			你的邮箱(必填，不公开)
+		</div>
+		{{ form.email(style="width:300px; height:35px;border-radius:5px;background-color:#797979;border:0px;") }}</br>
 
-		{{ form.blog_web.label }}</br>
-		{{ form.blog_web(style="width:250px; height:30px;border-radius:5px;") }}</br>
+		<div class="font-manager-2">
+			你的个人网站
+		</div>
+		{{ form.blog_web(style="width:300px; height:35px;border-radius:5px;background-color:#797979;border:0px;") }}</br>
+
 	<div class="report-comment-form">
-    {{ form.submit(style="width:100px; height:30px;border-radius:5px;") }}
+    	{{ form.submit(style="width:100px; height:30px;border-radius:5px;background-color:#797979; border:0px;") }}
 	</div>
 </form>
 
