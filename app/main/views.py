@@ -9,13 +9,17 @@ from .forms import NameForm, PostForm, CommentForm, CategoryForm, LableForm
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-	lables = Lable.query.all()
-	tag = Category.query.filter_by(name='technology').first()
-	page = request.args.get('page', 1, type=int)
-	pagination = Post.query.filter_by(category_id=tag.id).order_by(Post.timestamp.desc()).paginate(
-				page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
-	posts = pagination.items 
-	return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='index')
+	post_test = Post.query.all()
+	if post_test :
+		lables = Lable.query.all()
+		tag = Category.query.filter_by(name='technology').first()
+		page = request.args.get('page', 1, type=int)
+		pagination = Post.query.filter_by(category_id=tag.id).order_by(Post.timestamp.desc()).paginate(
+					page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
+		posts = pagination.items 
+		return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='index')
+	else:
+		return render_template('empty_index.html')
 
 @main.route('/lables/<int:lable_id>', methods=['GET', 'POST'])
 def lables(lable_id):
