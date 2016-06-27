@@ -23,57 +23,77 @@ def index():
 
 @main.route('/lables/<int:lable_id>', methods=['GET', 'POST'])
 def lables(lable_id):
-	lables = Lable.query.all()
-	lable = Lable.query.filter_by(id=lable_id).first()
-	page = request.args.get('page', 1, type=int)
-	pagination = Post.query.filter_by(lable_id=lable_id).order_by(Post.timestamp.desc()).paginate(
-				page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
-	posts = pagination.items 
-	return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, lable=lable, mark='lables')
+	post_test = Post.query.all()
+	if post_test :
+		lables = Lable.query.all()
+		lable = Lable.query.filter_by(id=lable_id).first()
+		page = request.args.get('page', 1, type=int)
+		pagination = Post.query.filter_by(lable_id=lable_id).order_by(Post.timestamp.desc()).paginate(
+					page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
+		posts = pagination.items 
+		return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, lable=lable, mark='lables')
+	else:
+		return render_template('empty_index.html')
 
 
 @main.route('/all', methods=['GET', 'POST'])
 def all():
-	lables = Lable.query.all()
-	page = request.args.get('page', 1, type=int)
-	pagination = Post.query.order_by(Post.timestamp.desc()).paginate(
-				page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
-	posts = pagination.items 
-	return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='all')
+	post_test = Post.query.all()
+	if post_test :
+		lables = Lable.query.all()
+		page = request.args.get('page', 1, type=int)
+		pagination = Post.query.order_by(Post.timestamp.desc()).paginate(
+					page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
+		posts = pagination.items 
+		return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='all')
+	else:
+		return render_template('empty_index.html')
 
 
 
 @main.route('/mind_study', methods=['GET', 'POST'])
 def mind_study():
-	lables = Lable.query.all()
-	tag = Category.query.filter_by(name='mind_study').first()
-	page = request.args.get('page', 1, type=int)
-	pagination = Post.query.filter_by(category_id=tag.id).order_by(Post.timestamp.desc()).paginate(
-				page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
-	posts = pagination.items 
-	return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='mind_study')
+	post_test = Post.query.all()
+	if post_test :
+		lables = Lable.query.all()
+		tag = Category.query.filter_by(name='mind_study').first()
+		page = request.args.get('page', 1, type=int)
+		pagination = Post.query.filter_by(category_id=tag.id).order_by(Post.timestamp.desc()).paginate(
+					page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
+		posts = pagination.items 
+		return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='mind_study')
+	else:
+		return render_template('empty_index.html')
 
 
 @main.route('/others', methods=['GET', 'POST'])
 def others():
-	lables = Lable.query.all()
-	tag = Category.query.filter_by(name='others').first()
-	page = request.args.get('page', 1, type=int)
-	pagination = Post.query.filter_by(category_id=tag.id).order_by(Post.timestamp.desc()).paginate(
-				page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
-	posts = pagination.items 
-	return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='others')
+	post_test = Post.query.all()
+	if post_test :
+		lables = Lable.query.all()
+		tag = Category.query.filter_by(name='others').first()
+		page = request.args.get('page', 1, type=int)
+		pagination = Post.query.filter_by(category_id=tag.id).order_by(Post.timestamp.desc()).paginate(
+					page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
+		posts = pagination.items 
+		return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='others')
+	else:
+		return render_template('empty_index.html')
 
 
 @main.route('/bug', methods=['GET', 'POST'])
 def bug():
-	lables = Lable.query.all()
-	tag = Category.query.filter_by(name='bug').first()
-	page = request.args.get('page', 1, type=int)
-	pagination = Post.query.filter_by(category_id=tag.id).order_by(Post.timestamp.desc()).paginate(
-				page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
-	posts = pagination.items 
-	return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='bug')
+	post_test = Post.query.all()
+	if post_test :
+		lables = Lable.query.all()
+		tag = Category.query.filter_by(name='bug').first()
+		page = request.args.get('page', 1, type=int)
+		pagination = Post.query.filter_by(category_id=tag.id).order_by(Post.timestamp.desc()).paginate(
+					page, per_page=current_app.config['FLASKY_POSTS_PER_PAGE'], error_out=False)
+		posts = pagination.items 
+		return render_template('index.html', index=True,posts=posts, lables=lables,Post=Post,  pagination=pagination, mark='bug')
+	else:
+		return render_template('empty_index.html')
 
 
 
