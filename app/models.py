@@ -23,11 +23,33 @@ class Lable(db.Model):
 	name = db.Column(db.String(32), unique=True, index=True)
 	lables = db.relationship('Post', backref='lable', lazy='dynamic')
 
+	@staticmethod
+	def insert_lables():
+		lables=['Python', 'Flask', 'Linux', 'Shell']
+		for lable in lables:
+			l = Lable.query.filter_by(name=lable).first()
+			if l is None:
+				ln = Lable(name=lable)
+				db.session.add(ln)
+			db.session.commit()
+
 class Category(db.Model):
 	__tablename__ = 'categorys'
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(64),unique=True, index=True)
 	categorys = db.relationship('Post', backref='category', lazy='dynamic')
+
+	@staticmethod
+	def insert_categorys():
+		categorys=['technology', 'mind_study', 'others',  'bug']
+		for category in categorys:
+			c = Category.query.filter_by(name=category).first()
+			if c is None:
+				cn = Category(name=category)
+				db.session.add(cn)
+		db.session.commit()
+				
+
 
 class Comment(db.Model):
 	__tablename__ = 'comments'
