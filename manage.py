@@ -19,9 +19,11 @@ manager.add_command('db', MigrateCommand)
 @manager.command
 def deploy():
 	"""Run deployment tasks."""
-	# 创建数据库表
-	
+	''' run this command in the first times '''
 	db.create_all()
+	Role.insert_roles()
+	Category.insert_categorys()
+	Lable.insert_lables()
 
 if __name__ == '__main__':
 	manager.run()
