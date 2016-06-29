@@ -1,16 +1,22 @@
 
-	<div class="header">
-		<div class="header-line">
-			<h3>header</h3>
-		</div>
+<div class="header">
 
-	{% if current_user.is_authenticated %}
-		<div class="header-manager">
-			<a href="{{ url_for('main.manager') }}">Manager</a>
-		</div>
-	{% endif %}
-
+	<div class="header-line-img">
 	</div>
+
+		<div class="header-line">
+			This is the  my first web.<br>
+			这是一个初始的网站
+		</div>
+
+		<div class="manager-line">
+			{% if current_user.is_authenticated %}
+				<a href="{{ url_for('main.manager') }}">Manager</a>
+			{% endif %}
+		</div>
+
+
+</div>
 
 <div class="navbar navbar-custom" role="navigation">
     <div class="container">
