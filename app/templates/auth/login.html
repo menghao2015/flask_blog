@@ -6,6 +6,16 @@
 {% block content %}
 <div class="bg_color">
 
+		<div class="container">
+		    {% for message in get_flashed_messages() %}
+		    <ul class="alert alert-warning">
+		        <button type="button" class="close" data-dismiss="alert">&times;</button>
+		        {{ message }}
+		    {% endfor %}
+			</ul>
+		</div>
+
+
 	<div class="login-box">
 
 		<div class="login">
