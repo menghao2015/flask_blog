@@ -11,7 +11,7 @@
 
 		<div class="manager-line">
 			{% if current_user.is_authenticated %}
-				<a href="{{ url_for('main.manager') }}">Manager</a>
+				<a href="{{ url_for('main.manager') }}" style="color:#797979">Manager</a>
 			{% endif %}
 		</div>
 
@@ -31,7 +31,7 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
             	<li><a class="navbar-brand" href="{{ url_for('main.index') }}">
-				<b>{% if mark=='default' %} <div class="navbar-mark"> 技术相关 </div> {% else %} 技术相关 {% endif %}</b>
+				{% if mark=='default' %} <div class="navbar-mark"> 技术相关 </div> {% else %} 技术相关 {% endif %}
 				</a></li>
 
                 <li><a  class="navbar-brand" href="{{ url_for('main.all') }}" >
@@ -55,10 +55,10 @@
 			<ul class="nav navbar-nav navbar-right">
 			{% if current_user.is_authenticated %}
 
-				<li><a class="navbar-brand" href="{{ url_for('main.new_post') }}">NewPost</a></li>
-				<li><a class="navbar-brand" href="{{ url_for('auth.logout') }}">LogOut</a></li>
+				<li><a class="navbar-brand" href="{{ url_for('main.new_post') }}">写</a></li>
+				<li><a class="navbar-brand" href="{{ url_for('auth.logout') }}">logout</a></li>
 			{% else %}
-				<li><a class="navbar-brand" href="{{ url_for('auth.login') }}">LogIn</a></li>
+				<li><a class="navbar-brand" href="{{ url_for('auth.login') }}">login</a></li>
 			{% endif %}
 			</ul>
         </div>
