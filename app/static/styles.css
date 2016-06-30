@@ -10,11 +10,11 @@
 
 .navbar li { margin-left:20px;}
 .navbar a {color:white;}
-.navbar a:hover{ border-bottom:2px solid #69c; color:white; text-decoration:none;}
-.nav li a:hover{background-color:#484848;}
+.navbar a:hover{ border-bottom:1px solid white;  color:white; text-decoration:none;}
+.nav li a:hover{ background-color:#484848;}
 
 .navbar-mark {
-	border-bottom: 2px solid white;
+	border-bottom: 1px solid #797979;
 	padding-bottom: 5px;
 }
 
@@ -104,7 +104,8 @@
 	overflow:hidden;
 	min-height:520px;
 	margin: 0px auto;
-	background:#99bbbb;
+	color:white;
+	background:#484848;
 }
 
 .manager-left {
@@ -115,10 +116,12 @@
 	text-align: center;
 }
 
+
 .manager-left-li {
 	width:230px;
 	font-size:8px;
 	margin: 10px 0px 10px 0px;
+	color:white;
 	}
 
 
@@ -149,6 +152,7 @@
 	height:auto;
 	padding:5px;
 	border:1px solid green;
+	color:white;
 	}
 
 .category-box-list {
@@ -158,6 +162,10 @@
 	padding 10px;
 	border:1px solid red;
 	text-align:center;
+	}
+
+.manager-form {
+	margin:-3px 0px 10px 0px;
 	}
 
 
@@ -188,21 +196,42 @@ a:focus { outline: none; }
 .comment-footer a{text-decoration:none;}
 
 .footer a {color:white}
+.manager-left a {color:white;}
 
 .footer {
 	width:100%;
 	height:100px;
-	text-align:center;
 	border-top: 1px solid #797979;
 	background:#484848;
+	text-align:center;
 }	
 
-.footer-github {
+.footer-top {
 	width:100%;
-	height:auto;
-	margin:25px 0px 0px 0px;
+	height:30px;
+	margin:20px 0px 0px 0px;
+	padding: 0px 0px 0px 585px;
+	}
+
+.footer-github {
+	opacity:0.65;
+	float:left;
+}
+
+.footer-email {
+	margin:4px 0px 0px 8px;
+	float:left;
 	opacity:0.65;
 }
+
+.footer-email-2 {
+	margin:4px 0px 0px 5px;
+	float:left;
+	opacity:0.65;
+	}
+
+
+
 
 .footer-powered {
 	width:100%;
@@ -218,7 +247,7 @@ a:focus { outline: none; }
 	height: 520px;
 	padding: 100px 300px;
 	margin: 0px auto;
-	background:#727272;
+	background:#484848;
 }
 
 .login {
@@ -227,7 +256,7 @@ a:focus { outline: none; }
 	margin: 0px auto;
 	text-align: center;
     -webkit-border-radius: 5px;
-    background-color: #99bbbb;
+    background-color: #727272;
 }
 /* ---------  Post CSS ---------- */
 
@@ -402,8 +431,10 @@ pre {
 	width:90%;
 	height:200px;
 	border-top: 2px solid #4f4f4f;
+	padding: 5px 0px 0px 0px;
 	margin: 0px auto;
 	opacity:0.65;
+	line-height:16pt;
 }
 
 .right-category {

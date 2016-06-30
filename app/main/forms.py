@@ -32,7 +32,7 @@ class CommentForm(Form):
 	email = StringField('email ', validators=[Required(), Length(1,64), Email()])
 	blog_web = StringField('personal web', validators=[ Length(0, 64)])
 	remember_me = BooleanField('Keep me logged in')
-	submit = SubmitField('Biu')
+	submit = SubmitField('Biu ~~')
 
 class CategoryForm(Form):
 	name = StringField('Add/Del Category Name', validators=[Required(), Length(1,64) ])
