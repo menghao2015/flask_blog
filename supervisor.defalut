@@ -144,10 +144,10 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
 
 [program:myapp]
 command=/web/myblog/web_v/bin/uwsgi --socket 0.0.0.0:8080   -w manage:app    ; supervisor启动命令
-;directory=/home/rsj217/rsj217/myproject                                                 ; 项目的文件夹路径
+;directory=/myblog/                                                 ; 项目的文件夹路径
 startsecs=0                                                                             ; 启动时间
 stopwaitsecs=0                                                                          ; 终止等待时间
 autostart=false                                                                         ; 是否自动启动
 autorestart=false                                                                       ; 是否自动重启
-stdout_logfile=/web/myblog/bolg_web.log                           ; log 日志
-stderr_logfile=/web/myblog/bolg_web.err   
+stdout_logfile=/var/log/myblog/blog_web.log                           ; log 日志
+stderr_logfile=/var/log/myblog/blog_web.err   
