@@ -44,7 +44,7 @@
 	width:133px;
 	height:100px;
 	margin:10px 0px 0px 100px;
-	background-image: url(header2.png);
+	background-image: url(header.png);
 	background-clip: border-box;
 	opacity:0.5;
 }
@@ -203,15 +203,20 @@ a:focus { outline: none; }
 	height:100px;
 	border-top: 1px solid #797979;
 	background:#484848;
-	text-align:center;
+	padding:20px 0px 0px 0px;
 }	
 
 .footer-top {
-	width:100%;
+	width:500px;
 	height:30px;
-	margin:20px 0px 0px 0px;
-	padding: 0px 0px 0px 585px;
+	margin:0px auto;
+	text-align:center;
 	}
+
+.footer-top-all {
+	width:160px;
+	margin:0px auto;
+}
 
 .footer-github {
 	opacity:0.65;
@@ -220,25 +225,30 @@ a:focus { outline: none; }
 
 .footer-email {
 	margin:4px 0px 0px 8px;
-	float:left;
 	opacity:0.65;
+	float:left;
 }
 
 .footer-email-2 {
 	margin:4px 0px 0px 5px;
-	float:left;
 	opacity:0.65;
+	float:left;
 	}
-
 
 
 
 .footer-powered {
-	width:100%;
-	height:auto;
+	width:500px;
+	height:30px;
 	opacity:0.65;
+	margin:0px auto;
 	}
 
+.footer-powered-all {
+	width:160px;
+	margin:0px auto;
+}
+	
 
 
 .login-box {
