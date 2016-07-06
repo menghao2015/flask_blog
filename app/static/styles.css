@@ -485,5 +485,6 @@ pre code {
 	background-color:#002b36;
 	color:white;
 	display: block;
-	padding:0px 0px 0px 10px;
+	padding:0px 0px 10px 10px;
+	border-radius:5px;
 }
