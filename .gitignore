@@ -5,6 +5,7 @@
 *.egg-info
 supervisor.conf
 bolg_web.*
+*.swp
 
 migrations/
 tests/
