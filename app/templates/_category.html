@@ -15,15 +15,17 @@
 <div class="right-category">
 
 	{% for lable in lables %}
-	 <a href="{{ url_for('.lables', lable_id=lable.id) }}">
-	 <div class="category-list">
-	 	{{ lable.name  }}
-		<div class="category-count">
-			{{ Post.query.filter_by(lable_id=lable.id).count() }}
-		</div>
+		{% if lable.name != 'NULL' %}
+		 <a href="{{ url_for('.lables', lable_id=lable.id) }}">
+			 <div class="category-list">
+	 			{{ lable.name  }}
+			<div class="category-count">
+				{{ Post.query.filter_by(lable_id=lable.id).count() }}
+			</div>
 		
-	 </div>
-	</a>
+	 	</div>
+		</a>
+		{% endif %}
 	 {% endfor %}
 	
  </div>

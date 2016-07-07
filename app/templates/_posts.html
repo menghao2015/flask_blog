@@ -15,9 +15,11 @@
 	</div>
 
 	{% if post.lable.name %}
+		{% if post.lable.name != 'NULL' %}
 		<div class="post-lable"> 
 			<span class="glyphicon glyphicon-tag"></span> {{ post.lable.name }}
 		</div>
+		{% endif %}
 	{% endif %}
 
 	<div class="post-body">
