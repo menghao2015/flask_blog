@@ -1,11 +1,15 @@
+#-*-coding:utf-8 -*-
 from flask import render_template, session, redirect, url_for, current_app, request, flash
-from flask.ext.login import current_user, login_required
+from flask_login import current_user, login_required
 from .. import db
 from ..models import User, Role, Post, Permission, Category, Comment, Lable
 from ..email import send_email
 from . import main
 from .forms import NameForm, PostForm, CommentForm, CategoryForm, LableForm
 
+
+import StringIO
+from .utils import ImageChar
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -123,7 +127,21 @@ def post(id):
 		return redirect(url_for('.post', id=post.id)) 
 	comments = post.comments.order_by(Comment.timestamp.asc())
 	post.update_browsed()
-	return render_template('post.html', posts=[post], form = form, post=post,Post=Post,  lables=lables, comments = comments ,edit_switch=True)
+	return render_template('post.html', posts=[post], form = form, post=post,Post=Post,  
+												lables=lables, comments = comments ,edit_switch=True)
+
+
+@main.route('/code', methods=['GET', 'POST'])
+def generate_veri_code():
+	ic=ImageChar(fontColor=(100,211,90))
+	strs,code_img=ic.randCode(4)
+	session['captcha'] = strs
+	buf=StringIO.StringIO()
+	code_img.save(buf,'JPEG',quality=70)
+	buf_str=buf.getvalue()
+	response=current_app.make_response(buf_str)
+	response.headers['Content-Type']='image/jpeg'
+	return response
 
 
 
@@ -209,5 +227,5 @@ def lable():
 	return render_template('manager.html', manager_swith='lable', form=form, lables=lables)
 
 
-	
-
+ 
+ 

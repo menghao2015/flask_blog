@@ -45,25 +45,35 @@
 
 
 	<div class="font-manager-2">
-		你的留言
+		您的留言
 	</div>
     {{ form.body(cols=90, rows=6, style="border-radius:5px; background-color:#797979;") }}
 
 	<div class="font-manager-2">
-		你的称呼(必填)
+		您的称呼(必填)
 	</div>
     {{ form.username(style="width:300px; height:35px;border-radius:5px;background-color:#797979;border:0px;") }}</br>
 
 
 		<div class="font-manager-2">
-			你的邮箱(必填，不公开)
+			您的邮箱(必填，不公开)
 		</div>
 		{{ form.email(style="width:300px; height:35px;border-radius:5px;background-color:#797979;border:0px;") }}</br>
 
 		<div class="font-manager-2">
-			你的个人网站
+			您的个人网站
 		</div>
 		{{ form.blog_web(style="width:300px; height:35px;border-radius:5px;background-color:#797979;border:0px;") }}</br>
+
+		<div class="font-manager-2">
+			请输入验证码
+		</div>
+		{{ form.recaptcha(style="width:150px; height:35px;border-radius:5px;background-color:#797979;border:0px;") }}
+		<img src="{{url_for('main.generate_veri_code')}}" width="150px" height="35px" />
+
+		{% if form.errors %}
+    		<span style="color: red;">{{ form.errors.get('recaptcha') }}</span>
+		{% endif %}
 
 	<div class="report-comment-form">
     	{{ form.submit(style="width:100px; height:30px;border-radius:5px;background-color:#797979; border:0px;") }}
