@@ -32,5 +32,5 @@ urllib3==1.22
 uWSGI==2.0.15
 visitor==0.1.3
 webencodings==0.5.1
-Werkzeug==0.13
+Werkzeug==0.15.3
 WTForms==2.1
